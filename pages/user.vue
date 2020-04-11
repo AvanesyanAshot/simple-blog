@@ -1,5 +1,0 @@
-<template>
-    <div>
-        <h1>USERS</h1>
-    </div>
-</template>
