@@ -6,7 +6,7 @@
     </div>
   </div>
 
-</template>
+</template> 
 
 <script>
 import navbar from '@/components/Navbar'
