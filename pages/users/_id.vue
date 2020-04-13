@@ -3,6 +3,8 @@
         <h1>{{user.name}}</h1>
         <hr />
         <b>{{user.email}}</b>
+        <hr />
+        <nuxt-link to='/'>home</nuxt-link>
     </div>
 </template>
 

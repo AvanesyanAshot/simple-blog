@@ -27,3 +27,9 @@ export default {
     
 }
 </script>
+
+<style scoped>
+    header {
+        background: #006AA8;
+    }
+</style>
