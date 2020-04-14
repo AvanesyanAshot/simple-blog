@@ -13,9 +13,9 @@ export default {
     validate({params}) {
         return /^\d+$/.test(params.id) //! проверка на число  
     },
-    async asyncData({params, error, $axios}){
+    async asyncData({params, error, store}){
         try {
-            const user = await $axios.$get(`https://jsonplaceholder.typicode.com/users/${params.id}`)
+            const user = await store.dispatch('users/fetchUserById', params.id)
             return {user}
         } catch (e) {
             error(e)

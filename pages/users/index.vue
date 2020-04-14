@@ -22,7 +22,7 @@ export default {
     // },
     async fetch({store, error}) {
         try {
-            if(store.getters['users/users'].leght === 0){
+            if(store.getters['users/users'].lenght === 0){
                 await store.dispatch('users/fetchUsers')
             }
         } catch (error) {
