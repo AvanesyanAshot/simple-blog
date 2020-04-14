@@ -4,7 +4,6 @@
         <ul>
             <li v-for="user of users" :key='user.id'>  
                 <a href="#" @click.prevent="goTo(user)">{{ user.name }} {{ user.email }}</a>              
-                
             </li>
         </ul>
     </section>
@@ -20,15 +19,15 @@ export default {
     //         error(error);
     //     }
     // },
-    async fetch({store, error}) {
-        try {
-            if(store.getters['users/users'].lenght === 0){
-                await store.dispatch('users/fetchUsers')
-            }
-        } catch (error) {
-            error(error);
-        }
-    },
+    // async fetch({store, error}) {
+    //     try {
+    //         if(store.getters['users/users'].length === 0){
+    //             await store.dispatch('users/fetchUsers')
+    //         } 
+    //     } catch (error) {
+    //         error(error);
+    //     }
+    // },
     data() { 
         return{
             pageTitle: 'USERS'
