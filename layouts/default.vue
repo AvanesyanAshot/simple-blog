@@ -1,18 +1,21 @@
 <template>
-  <div class="main">
-    <navbar />
-    <div class="container">
+  <el-container>
+    <el-header>
+      <AppNavigaion />
+    </el-header>
+    <el-main>
       <nuxt />
-    </div>
-  </div>
-
+    </el-main>
+    <el-footer>Footer</el-footer>
+  </el-container>
 </template> 
 
 <script>
-import navbar from '@/components/Navbar'
+import AppNavigaion from '@/components/main/Navigation'
+
 export default {
   components:{
-    navbar
+    AppNavigaion
   }
 }
 </script>
