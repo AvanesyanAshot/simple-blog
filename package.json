@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.7",
-    "bootstrap": "^4.4.1",
+    "element-ui": "^2.13.1",
+    "express": "^4.17.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {}

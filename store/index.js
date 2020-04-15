@@ -6,7 +6,7 @@ export const actions = {
         commit('clearToken')
     },
     async nuxtServerInit({dispatch}) {
-        await dispatch('users/fetchUsers')
+        await dispatch('users/fetchUsers')//! диспачит с запуска 
     }
 }
 
