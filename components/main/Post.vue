@@ -9,7 +9,7 @@
                 <h3>header</h3>
 
                 <small>
-                    <i class="ei-icon-time"></i>
+                    <i class="el-icon-time"></i>
                     {{ new Date().toLocaleString() }}
                 </small>
             </header>
