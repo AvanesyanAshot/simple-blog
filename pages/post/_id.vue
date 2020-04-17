@@ -29,7 +29,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, nostrum officiis dolore earum possimus autem. Veritatis, esse officiis! Tenetur, quod. Possimus officia necessitatibus, aliquam nihil maxime molestiae sint exercitationem cumque.</p>
         </main>
         <footer>
-
+            <app-comment-form></app-comment-form>
             <div class="comments" v-if='true'>
                 <app-comment
                  v-for='comment in 4'
@@ -46,12 +46,14 @@
 
 <script>
 import AppComment from '@/components/main/Comment'
+import AppCommentForm from '@/components/main/CommentForm'
 export default {
     validate({params}) {
         return !!params.id
     },
     components:{
-        AppComment
+        AppComment,
+        AppCommentForm
     }
 }
 </script>

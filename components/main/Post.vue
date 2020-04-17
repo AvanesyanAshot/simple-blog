@@ -63,7 +63,7 @@ export default {
         height: auto;
     }
 
-    .post-footer{
+    .post-footer small{
         display: flex;
         justify-content: space-between;
         align-items: center;
