@@ -8,7 +8,10 @@
             <header slot="header" class="post-header">
                 <h3>header</h3>
 
-                <small>{{ new Date().toLocaleString() }}</small>
+                <small>
+                    <i class="ei-icon-time"></i>
+                    {{ new Date().toLocaleString() }}
+                </small>
             </header>
             <div class="post-body">
                 <img src="https://avatars.mds.yandex.net/get-pdb/2883918/1938b612-fbe0-43bc-bc82-e5d90e533f42/s1200?webp=false" 
@@ -17,9 +20,11 @@
                 >
             </div>
             <footer class='post-footer'>
-                <el-button size="small" @click="openPost">Открыть</el-button>
+                <small>
+                    <el-button size="small" @click="openPost">Открыть</el-button>
 
-                <span><i class='el-icon-message'></i>12</span>
+                    <span><i class='el-icon-message'></i>12</span>
+                </small>
             </footer>
         </el-card>
     </div>
