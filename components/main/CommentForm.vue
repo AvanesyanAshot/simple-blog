@@ -49,10 +49,15 @@ export default {
     },
     methods: {
         onSubmit() {
-            console.log('brug')
-            fetch("https://jsonplaceholder.typicode.com/users")
-                .then(responce => console.log(responce))
-        }
+            this.$refs.form.validate(valid => {
+                if (valid) {
+                    alert('Form is valid!');
+                } else {
+                    alert('ERROR')
+                }
+            });
+        },
+        
       
     }
 }
