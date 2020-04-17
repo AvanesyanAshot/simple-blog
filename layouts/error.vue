@@ -1,17 +1,29 @@
 <template>
-    <section>
-        <h1>ERROR 404</h1>
-        <nuxt-link to='/'>Home</nuxt-link>
-    </section>
+    <div class="error-layout">
+        <div class="error-content">
+            <h1 class="error-title">Ошибка 404</h1>
+            <nuxt-link class="error-link" to="/">Вернуться на главную страницу</nuxt-link>
+        </div>
+    </div>
 </template>
 
-<style scoped>
-  h1 {
-      color: red;
-  }
-  section {
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-  }
+<style lang="scss" scoped>
+    .error-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .error-context {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .error-title {
+        color: rgb(145, 6, 6);
+        margin-bottom: 1rem;
+    }
+    .error-link {
+        color:royalblue;
+    }
 </style>

@@ -1,26 +1,29 @@
 <template>
-    <el-card
-        shadow='hover'
-        :body-style="{padding: 0}"
-        class='post'
-    >
-        <header slot="header" class="post-header">
-            <h3>header</h3>
+    <div>
+        <el-card
+            shadow='hover'
+            :body-style="{padding: 0}"
+            class='post'
+        >
+            <header slot="header" class="post-header">
+                <h3>header</h3>
 
-            <small>{{ new Date().toLocaleString() }}</small>
-        </header>
-        <div class="post-body">
-            <img src="https://avatars.mds.yandex.net/get-pdb/2883918/1938b612-fbe0-43bc-bc82-e5d90e533f42/s1200?webp=false" 
-                alt="post" 
-                class='post-img'
-            >
-        </div>
-        <footer class='post-footer'>
-            <el-button size="small" @click="openPost">Открыть</el-button>
+                <small>{{ new Date().toLocaleString() }}</small>
+            </header>
+            <div class="post-body">
+                <img src="https://avatars.mds.yandex.net/get-pdb/2883918/1938b612-fbe0-43bc-bc82-e5d90e533f42/s1200?webp=false" 
+                    alt="post" 
+                    class='post-img'
+                >
+            </div>
+            <footer class='post-footer'>
+                <el-button size="small" @click="openPost">Открыть</el-button>
 
-            <span><i class='el-icon-message'></i>12</span>
-        </footer>
-    </el-card>
+                <span><i class='el-icon-message'></i>12</span>
+            </footer>
+        </el-card>
+    </div>
+
 </template> 
 
 <script>
@@ -28,7 +31,8 @@
 export default {
     methods: {
         openPost() {
-            alert('Открыл')
+            const id = "textID" 
+            this.$router.push(`/post/${id}`)
         }
     }
 }
@@ -38,7 +42,7 @@ export default {
     .post {
         margin-bottom: 1.5rem;
     }
-    
+
     .post-header{
         display: flex;
         justify-content: space-between;
