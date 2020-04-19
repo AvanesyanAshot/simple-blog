@@ -7,8 +7,8 @@
 <style scoped>
     .container{
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 5rem;
+        justify-content: center;
+        width: 100%;
+        padding-top: 4rem;
     }
 </style>

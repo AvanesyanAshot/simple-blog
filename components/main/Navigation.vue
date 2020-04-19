@@ -1,6 +1,7 @@
 <template>
     <nav>
         <h1>Blog</h1>
+        <nuxt-link to='/admin'>admin</nuxt-link>
     </nav>
 </template>
 
@@ -8,7 +9,7 @@
     nav {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         height: 100%;
         border-bottom:1px solid #e6e6e6;
     }
