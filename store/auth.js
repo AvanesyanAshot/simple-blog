@@ -1,5 +1,5 @@
 export const state = () => ({
-    token: null
+    token: true
 })
 
 export const actions = {
@@ -16,6 +16,13 @@ export const actions = {
             throw e
         }
         
+    },
+    async createUser({commit}, formData) {
+        try {
+            console.log("create User", formData)
+        } catch (e) {
+            
+        }
     },
     setToken({commit}, token){
         commit('setToken', token)
