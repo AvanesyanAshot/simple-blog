@@ -19,7 +19,7 @@
             <i class="el-icon-service"></i>
             <span>Пользователи</span>
         </el-menu-item>
-        <el-menu-item index="/">
+        <el-menu-item index="/admin/logout">
             <i class="el-icon-setting"></i>
             <span>Выйти</span>
         </el-menu-item>

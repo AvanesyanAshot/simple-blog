@@ -13,6 +13,9 @@ export const actions = {
     setToken({commit}, token){
         commit('setToken', token)
     },
+    logout({commit}){
+        commit('clearToken')
+    }
 
 }
 
@@ -20,6 +23,10 @@ export const mutations = {
     setToken(state, token){
         state.token = token
     },
+    clearToken(state){
+        console.log(state.token)
+        state.token = null
+    }
 }
 
 export const getters  = {
