@@ -88,9 +88,12 @@ export default {
                         await this.$store.dispatch('post/update', FormData)
                         this.$message.success('Пост обновлен')
                         this.loading =  false
+                        this.controls.text = ''
                     } catch (error) {
                         this.$message.warning('Произошла ошибка попробуйте снова')
                         this.loading = false
+                        this.controls.text = ''
+
                     }
 
                 }
