@@ -22,12 +22,21 @@ export const actions = {
     async update({}, {id, text}) {
         
     },
-    async create({}, {title, text}){
-        return await new Promise(resolve => {
-            setTimeout(()=>{
-                resolve()
-            },1000 )
-        })
+    async create({commit}, {title, text, image}){
+        try {
+            const fd = new FormData()
+            fd.append('title', title)
+            fd.append('text', text)
+            fd.append('image', image, image.name)
+            return await new Promise(resolve => {
+                setTimeout(()=>{
+                    resolve()
+                },1000 )
+            })
+        } catch (error) {
+            commit('setError', error, {root: true})
+            throw error
+        }
     },
     async fetchAdminById({}, id){
         return await new Promise(resolve =>{

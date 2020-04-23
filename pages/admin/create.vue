@@ -50,7 +50,7 @@
                     native-type="submit"
                     :loading="loading"
                 >
-                Обновить
+                Создать
                 </el-button>
 
             </el-form-item>
@@ -100,15 +100,13 @@ export default {
                         this.controls.text = ''
                         this.controls.title = ''
                         this.image = null
-                        this.$refs.upload.clearfiles()
+                        this.$refs.upload.clearFiles()
                         this.$message.success('Пост успешно создан')
                     } catch (error) {
-
                         this.$message.warning('Произошла ошибка попробуйте снова')
                     } finally {
                         this.loading = false
-                    }
-
+                    }   
                 } else {
                     this.$message.warning('Эта форма не валидна')
                 }
