@@ -16,11 +16,32 @@
             <el-form-item label="Текст в формате .md или .html" prop="text">
                 <el-input 
                     type="textarea"
-                    v-model.trim="controls.text" 
+                    v-model="controls.text" 
                     resize="none"
                     :rows="10"
                 />
             </el-form-item>
+
+            <el-button class="mb" type='success' plain @click='previewDialog = true'>Предпросмотр</el-button>
+
+            <el-dialog title="Предпросмотр" :visible.sync="previewDialog">
+                <div  :key="controls.text"><!--После изменени controls.text vue вынужден перерендерить vue-markdown -->
+                    <vue-markdown>{{controls.text}}</vue-markdown>
+                </div>
+            </el-dialog>
+
+            <el-upload
+                class="mb"
+                drag
+                ref="upload"
+                action="https://jsonplaceholder.typicode.com/posts/"
+                :on-change="handleImageChange"
+                :auto-upload="false"
+            >
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">Перетащите картинку <em>или нажмите</em></div>
+                <div class="el-upload__tip" slot="tip">Файлы с разрешением jpg/png</div>
+            </el-upload>
 
             <el-form-item>
                 <el-button 
@@ -43,6 +64,8 @@ export default {
     middleware: ["admin-auth"],
     data() {
         return {
+            image: null,
+            previewDialog: false,
             loading: false,
             controls: {
                 title: '',
@@ -60,18 +83,24 @@ export default {
         };
     },
     methods: {
+        handleImageChange(file, fileList){
+            this.image = file.raw
+        },
         onSubmit() {
             this.$refs.form.validate(async valid =>{
-                if(valid) {
+                if(valid && this.image) {
                     this.loading = true
                     const FormData = {
                         text: this.controls.text,
-                        title: this.controls.title 
+                        title: this.controls.title,
+                        image: this.image 
                     }
                     try {
                         await this.$store.dispatch('post/create', FormData)
                         this.controls.text = ''
                         this.controls.title = ''
+                        this.image = null
+                        this.$refs.upload.clearfiles()
                         this.$message.success('Пост успешно создан')
                     } catch (error) {
 
@@ -80,6 +109,8 @@ export default {
                         this.loading = false
                     }
 
+                } else {
+                    this.$message.warning('Эта форма не валидна')
                 }
             })
         }
