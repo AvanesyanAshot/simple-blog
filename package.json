@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.7",
+    "body-parser": "^1.19.0",
     "element-ui": "^2.13.1",
     "express": "^4.17.1",
     "nuxt": "^2.0.0",
